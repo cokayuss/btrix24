@@ -6,3 +6,5 @@ public class LoginPage {
     //some more comments
     //some more too :)
 }
+
+
