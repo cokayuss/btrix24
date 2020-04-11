@@ -7,7 +7,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +19,7 @@ public class BrowserUtils {
      *
      * @param seconds
      */
+
     public static void wait(int seconds) {
         try {
             Thread.sleep(1000 * seconds);
@@ -27,6 +27,7 @@ public class BrowserUtils {
             e.printStackTrace();
         }
     }
+
     /**
      * @param elements represents collection of WebElements
      * @return collection of strings
@@ -40,6 +41,7 @@ public class BrowserUtils {
         }
         return textValues;
     }
+
     /**
      * waits for backgrounds processes on the browser to complete
      *
@@ -54,6 +56,8 @@ public class BrowserUtils {
             error.printStackTrace();
         }
     }
+
+
     /**
      * Clicks on an element using JavaScript
      *
@@ -63,6 +67,8 @@ public class BrowserUtils {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
+
+
     /**
      * Scroll to element using JavaScript
      *
@@ -71,11 +77,13 @@ public class BrowserUtils {
     public static void scrollTo(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
     /**
      * @param name screenshot name
      * @return path to the screenshot
      */
     public static String getScreenshot(String name) {
+
         //adding date and time to screenshot name, to make screenshot unique
         name = new Date().toString().replace(" ", "_").replace(":", "-") + "_" + name;
         //where we gonna store a screenshot
